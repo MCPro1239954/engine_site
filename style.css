@@ -1,0 +1,35 @@
+@font-face {
+  font-family: OpenSans;
+  src: url(OpenSans-Regular.ttf);
+}
+
+html {
+  background-color: #FFFFCC;
+  font-family: OpenSans, sans-serif;
+}
+
+a {
+  color: #4444FF;
+  text-decoration: none;
+}
+
+tr th {
+  background-color: #AAAAAA;
+}
+
+tr {
+  background-color: #DDDDDD;
+  font-size: 0.9rem;
+}
+
+table, td, th {
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  padding: 4px;
+}
+
+th {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+}
