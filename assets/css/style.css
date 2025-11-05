@@ -6,6 +6,7 @@
 html {
   background-color: #FFFFCC;
   font-family: OpenSans, sans-serif;
+  margin: 0.2em;
 }
 
 a {
@@ -13,23 +14,27 @@ a {
   text-decoration: none;
 }
 
-tr th {
-  background-color: #AAAAAA;
-}
-
-tr {
-  background-color: #DDDDDD;
-  font-size: 0.9rem;
-}
-
-table, td, th {
-  border: 1px solid #000000;
+table {
   border-collapse: collapse;
+  width: 100%;
+  background-color: #DDDDDD;
+  border: 1px solid #000000;
+}
+
+th, td {
   padding: 4px;
+  border: 1px solid #000000;
 }
 
 th {
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-align: center;
+  background-color: #AAAAAA;
+  font-size: 1.1em;
+}
+
+td {
+  font-size: 0.9em;
+}
+
+tr:hover td {
+  background-color: #DDFFDD;
 }
