@@ -1,0 +1,13 @@
+1. Open PowerShell and run "cd E:\engine_site; py -m http.server"
+2. Open Chrome and go to http://localhost:8000
+
+Push to GitHub
+
+--
+
+TODO:
+
+- write README
+- read LICENSE
+- finish Chevrolet small-block
+- improve main page
