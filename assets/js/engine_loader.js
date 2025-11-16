@@ -37,7 +37,7 @@ function render_table(data) {
   data.shift(); // remove RPOs
   data.shift(); // remove minimums
 
-  let table = document.getElementsByTagName("table")[0];
+  let table = document.getElementsByTagName("tbody")[0];
 
   for (let idx = 0; idx < data.length; idx++) {
     let row = data[idx];
@@ -113,33 +113,21 @@ function render_table(data) {
     let power_hp = power;
     let power_kw = Math.round(power * 0.7457);
     let power_ps = Math.round(power * 1.014);
-    create_cell(html_row, `${power_hp} hp (${power_kw} kW, ${power_ps} PS)`);
+    create_cell(html_row, `${power_hp} hp (${power_kw} kW, ${power_ps} PS) @ ${formatter.format(power_rpm)} RPM`);
     // END power
-
-    create_cell(html_row, `${formatter.format(power_rpm)} RPM`);
 
     // BEGIN torque
     let torque_lbft = torque;
     let torque_nm = Math.round(torque * 1.3558);
-    create_cell(html_row, `${torque_lbft} lbf-ft (${torque_nm} Nm)`);
+    create_cell(html_row, `${torque_lbft} lbf-ft (${torque_nm} Nm) @ ${formatter.format(torque_rpm)} RPM`);
     // END torque
-    
-    create_cell(html_row, `${formatter.format(torque_rpm)} RPM`);
 
     table.appendChild(html_row);
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  // let data = [
-  //   ["2bbl","2x4bbl","FI","4bbl"],
-  //   [[8,4.125,3.75],[8,3.875,3],[8,3.671,3.1],[8,3.5,3.48],[8,3.75,3],[8,4,3]],
-  //   ["","F6","F4","T4","39","77","E4","32","V1"],
-  //   [55,110,200,32,20],
-  //   // data below
-  //   [0,0,4,0,52,12,57,2]
-  // ]; // something to get ./engines.json
-  fetch("./engines.json")
+function render(filename) {
+  fetch(`../assets/json/${filename}.json`)
     .then(res => res.json())
-    .then(data => render_table(data));
-});
+    .then(res => render_table(res));
+}

@@ -15,24 +15,26 @@ a {
 }
 
 table {
-  border-collapse: collapse;
   width: 100%;
   background-color: #DDDDDD;
   border: 1px solid #000000;
+  border-collapse: collapse;
 }
 
 th, td {
   padding: 4px;
-  border: 1px solid #000000;
 }
 
 th {
   background-color: #AAAAAA;
   font-size: 1.1em;
+  position: sticky;
+  top: 0;
 }
 
 td {
   font-size: 0.9em;
+  text-align: center;
 }
 
 tr:hover td {
